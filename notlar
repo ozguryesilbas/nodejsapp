@@ -1,0 +1,26 @@
+NODEJS TUTORIALS klasörü oluşturulur
+idea ile açılır
+app.js oluşturulur
+node app.js komutu ile çalıştırılır
+http://localhost:8005/
+
+nodejs uygulamamızı hızlı çalıştırmak için aşağıdaki paketi yükleyelim
+npm install -g nodemon
+
+uygulamayı başlatmak için artık aşağıdakini kullanabiliriz
+nodemon app.js
+
+package.json oluşturalım
+içine isim ve versiyon yazalım
+nmp bazı anahtarları arar
+hızlı başlatmak için aşağıdskini yazalım
+  "scripts": {
+    "start": "nodemon app.js"
+  }
+artık aşağıdaki komutla çalıştırabiliriz
+npm start
+
+
+
+
+
