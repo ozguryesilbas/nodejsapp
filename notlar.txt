@@ -34,5 +34,9 @@ dependencyleri buradan takip edebiliriz
 şimdi fe global eklediğimiz nodemon'u pjpje paketine ve package.json'a ekleyelim
 npm install -g nodemon
 
+eğer projeyi taşımak istersek ihtiyaç duyulan kütüphanelerin klasörünü taşımamıza gerek yoktur
+aşağıdaki komut package.json içindeki tüm dependencyleri yükler
+nmp install
 
-
+eğer bir modülü kaldırmak istersek örneğin aşağıdaki komutu çalıştırabiliriz
+npm remove express
