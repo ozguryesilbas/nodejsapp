@@ -8,6 +8,16 @@ var router = require('./pagerouter');
 //css klasörünü herkese açtık, yoksa cssi görmez
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
+//middleware yani ara fonksiyon tanımladık
+//nexti diğer yerlerde kullanmadık zorunda da değiliz
+app.use(function (req, res, next) {
+    console.log("url...: " + req.originalUrl);
+    console.log("time..: " + Date.now());
+
+    //next yapmassak sayfada bekleme olur açılmaz, amacımız responsu göndermek
+    next();
+});
+
 //router '/' koyduğumuz için kullanıcıdan gelen tüm isteklere cevap vermeye çalışıyor
 app.use('/', router);
 
