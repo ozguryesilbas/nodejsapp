@@ -1,5 +1,6 @@
-var http = require("http");
-var fs = require("fs");
+var http = require('http');
+var fs = require('fs');
+var express = require('express'); //express ile aşağıdaki işlemleri daha kolay yapacağız
 
 var homeController = function(req, res) {
     //nodejs blocksuzdur, o yüzden işlem bitince function (err, data) çağarıyoruz
@@ -7,14 +8,14 @@ var homeController = function(req, res) {
     //işlemlerin sırayla çalışmasını sağlamak için kullanılırlar
     fs.readFile("index.html", function (err, data) {
         res.write(data);
-        res.end("Html dosyası okundı");
+        res.end("Html dosyası okundu");
     });
 }
 
 var loginController = function(req, res) {
     fs.readFile("login.html", function (err, data) {
         res.write(data);
-        res.end("Html dosyası okundı");
+        res.end("Html dosyası okundu");
     });
 }
 
