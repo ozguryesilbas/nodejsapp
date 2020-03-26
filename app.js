@@ -3,6 +3,7 @@ var fs = require('fs');
 var express = require('express'); //express ile aşağıdaki işlemleri daha kolay yapacağız
 var app = express(); //express nesnemizi oluşturduk
 var path = require('path');
+var pagecontroller = require('./pagecontroller')('test');
 
 //css klasörünü herkese açtık, yoksa cssi görmez
 app.use('/public', express.static(path.join(__dirname, 'public')));
