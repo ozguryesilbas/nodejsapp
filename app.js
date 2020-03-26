@@ -3,17 +3,19 @@ var fs = require('fs');
 var express = require('express'); //express ile aşağıdaki işlemleri daha kolay yapacağız
 var app = express(); //express nesnemizi oluşturduk
 var path = require('path');
-var pagecontroller = require('./pagecontroller');
+var router = require('./pagerouter');
 
 //css klasörünü herkese açtık, yoksa cssi görmez
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-
-app.get('/', pagecontroller.index);
-
-app.get('/login', pagecontroller.login);
+//router '/' koyduğumuz için kullanıcıdan gelen tüm isteklere cevap vermeye çalışıyor
+app.use('/', router);
 
 app.listen(8005);
+
+/*app.get('/', pagecontroller.index);
+
+ app.get('/login', pagecontroller.login);*/
 
 /*
 var homeController = function(req, res) {
