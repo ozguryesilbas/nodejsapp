@@ -3,22 +3,15 @@ var fs = require('fs');
 var express = require('express'); //express ile aşağıdaki işlemleri daha kolay yapacağız
 var app = express(); //express nesnemizi oluşturduk
 var path = require('path');
-var pagecontroller = require('./pagecontroller')('test');
+var pagecontroller = require('./pagecontroller');
 
 //css klasörünü herkese açtık, yoksa cssi görmez
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-var indexController = function(req,res){
-    res.sendfile(path.join(__dirname, 'index.html'));
-};
 
-var loginController = function(req,res){
-    res.sendfile(path.join(__dirname, 'login.html'));
-};
+app.get('/', pagecontroller.index);
 
-app.get('/', indexController);
-
-app.get('/login', loginController);
+app.get('/login', pagecontroller.login);
 
 app.listen(8005);
 
