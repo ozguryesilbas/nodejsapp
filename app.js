@@ -7,25 +7,17 @@ var path = require('path');
 //css klasörünü herkese açtık, yoksa cssi görmez
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-app.get('/', function(req,res){
-    //nodejs blocksuzdur, o yüzden işlem bitince function (err, data) çağarıyoruz
-    //bu fonksiyonlar (aynı şekilde function (req, res) de) callback fonksiyonlarıdır
-    //işlemlerin sırayla çalışmasını sağlamak için kullanılırlar
-    fs.readFile("index.html", function (err, data) {
-        res.write(data);
-        res.end("Html dosyası okundu");
-    });
-});
+var indexController = function(req,res){
+    res.sendfile(path.join(__dirname, 'index.html'));
+};
 
-app.get('/login', function(req,res){
-    //nodejs blocksuzdur, o yüzden işlem bitince function (err, data) çağarıyoruz
-    //bu fonksiyonlar (aynı şekilde function (req, res) de) callback fonksiyonlarıdır
-    //işlemlerin sırayla çalışmasını sağlamak için kullanılırlar
-    fs.readFile("login.html", function (err, data) {
-        res.write(data);
-        res.end("Html dosyası okundu");
-    });
-});
+var loginController = function(req,res){
+    res.sendfile(path.join(__dirname, 'login.html'));
+};
+
+app.get('/', indexController);
+
+app.get('/login', loginController);
 
 app.listen(8005);
 
