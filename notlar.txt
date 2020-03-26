@@ -40,3 +40,5 @@ nmp install
 
 eğer bir modülü kaldırmak istersek örneğin aşağıdaki komutu çalıştırabiliriz
 npm remove express
+bunu package.jsona yazmak istersek de aşağıdakini yazmalıyız
+npm remove express --save
