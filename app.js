@@ -1,8 +1,11 @@
 //var http = require('http');
 var fs = require('fs');
 var express = require('express'); //express ile aşağıdaki işlemleri daha kolay yapacağız
-
 var app = express(); //express nesnemizi oluşturduk
+var path = require('path');
+
+//css klasörünü herkese açtık, yoksa cssi görmez
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req,res){
     //nodejs blocksuzdur, o yüzden işlem bitince function (err, data) çağarıyoruz
