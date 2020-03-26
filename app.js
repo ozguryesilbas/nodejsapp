@@ -18,14 +18,16 @@ var loginController = function(req, res) {
     });
 }
 
+var yonlendirici = new Object();
+
+//hash tablosuna yazdık
+yonlendirici['/'] = homeController;
+yonlendirici['/login'] = loginController;
+
 var server = http.createServer(function (req, res) {
 
-    if(req.url=="/"){
-        homeController(req,res);
-    }
-
-    if(req.url=="/login"){
-        loginController(req,res);
+    if(req.url in yonlendirici){
+        yonlendirici[req.url](req,res);
     }
 
     console.log(req.url);
