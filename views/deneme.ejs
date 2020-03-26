@@ -5,6 +5,13 @@
     <title>EJS</title>
 </head>
 <body>
-<h1>EJS Page</h1>
+    <h1>EJS Page</h1>
+    <h4><%=mesaj%></h4>
+
+    <ul>
+        <% for (var i=0; i<kullanicilar.length; i++) {%>
+            <li><%=kullanicilar[i]%></li>
+        <%}%>
+    </ul>
 </body>
 </html>

@@ -11,5 +11,11 @@ module.exports.login = function(req,res){
 };
 
 module.exports.deneme = function(req,res){
-    res.render('deneme');
+    /*res.render('deneme');*/
+
+    //controllerdan viewa parametre gönderelim
+    var kisiler = [
+        'Ahmet','Mehmet','Osman'
+    ];
+    res.render('deneme', {mesaj : 'Controller Text', kullanicilar : kisiler});
 };
