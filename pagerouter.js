@@ -11,5 +11,6 @@ router.use(function (req, res, next) {
 
 router.get('/', controller.index);
 router.get('/login', controller.login);
+router.get('/deneme', controller.deneme);
 
 module.exports = router;

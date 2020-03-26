@@ -5,6 +5,9 @@ var app = express(); //express nesnemizi oluşturduk
 var path = require('path');
 var router = require('./pagerouter');
 
+app.set('view engine', 'ejs'); //görüntü motorunu tenıttık
+app.set('views', path.join(__dirname, '/views')); //klasörü tanıttık
+
 //css klasörünü herkese açtık, yoksa cssi görmez
 app.use('/public', express.static(path.join(__dirname, 'public')));
 

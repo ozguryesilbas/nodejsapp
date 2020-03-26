@@ -9,3 +9,7 @@ module.exports.index = function(req,res){
 module.exports.login = function(req,res){
     res.sendfile(path.join(__dirname, 'login.html'));
 };
+
+module.exports.deneme = function(req,res){
+    res.render('deneme');
+};
