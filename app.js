@@ -4,6 +4,7 @@ var express = require('express'); //express ile aşağıdaki işlemleri daha kol
 var app = express(); //express nesnemizi oluşturduk
 var path = require('path');
 var router = require('./pagerouter');
+var db = require('./db');
 
 app.set('view engine', 'ejs'); //görüntü motorunu tenıttık
 app.set('views', path.join(__dirname, '/views')); //klasörü tanıttık
