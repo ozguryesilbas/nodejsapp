@@ -31,8 +31,8 @@ bu modül projemizin içinde olmalıdır
 --save ise bunun package.json dosyasına dependency olarak eklenmesini sağladı
 dependencyleri buradan takip edebiliriz
 
-şimdi fe global eklediğimiz nodemon'u pjpje paketine ve package.json'a ekleyelim
-npm install -g nodemon
+şimdi de global eklediğimiz nodemon'u proje paketine ve package.json'a ekleyelim
+npm install nodemon --save
 
 eğer projeyi taşımak istersek ihtiyaç duyulan kütüphanelerin klasörünü taşımamıza gerek yoktur
 aşağıdaki komut package.json içindeki tüm dependencyleri yükler
