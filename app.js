@@ -22,6 +22,26 @@ app.use(function (req, res, next) {
     next();
 });
 
+//kullanici çağarıldığı anda mongodb de collection oluşturulur
+var Kullanici = require('./models/kullanici');
+
+var yeniKullanici = new Kullanici({
+    ad: 'Ahmet',
+    soyad: 'Yılmaz',
+    kullaniciAdi: 'ahmetyilmaz',
+    sifre: 'secret'
+});
+
+//kullanıcı kaydedilir, ancak 2. kez proje çalıştırıldığında unique kullanıcı adından dolayı kayıt edilmez
+//kaydın sonuna __v:0 versiyon bilgisi otomatik eklenmiş
+yeniKullanici.save(function (err) {
+    if(err){
+        console.log(err);
+    } else {
+        console.log('Kulanıcı başarıyla kaydedildi!');
+    }
+})
+
 //router '/' koyduğumuz için kullanıcıdan gelen tüm isteklere cevap vermeye çalışıyor
 app.use('/', router);
 
