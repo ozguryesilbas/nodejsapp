@@ -42,6 +42,11 @@ yeniKullanici.save(function (err) {
     }
 })
 
+//kullanıcılar getirilir
+Kullanici.find({ad:'Ahmet'}, function (err, results) {
+    console.log(results);
+})
+
 //router '/' koyduğumuz için kullanıcıdan gelen tüm isteklere cevap vermeye çalışıyor
 app.use('/', router);
 
