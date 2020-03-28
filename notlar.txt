@@ -45,3 +45,9 @@ npm remove express --save
 
 ejs jsf muadli kütüphanedir
 npm install ejs --save
+
+veritabanı işlmeleri için mongoose yükleyelim
+npm install mongoose --save
+
+
+
