@@ -47,6 +47,15 @@ Kullanici.find({ad:'Ahmet'}, function (err, results) {
     console.log(results);
 })
 
+//kullanıcı silinir
+Kullanici.findOneAndRemove({ad:'Ahmet'}, function (err) {
+    if(err){
+        console.log(err);
+    } else {
+        console.log('Kulanıcı başarıyla silindi!');
+    }
+})
+
 //router '/' koyduğumuz için kullanıcıdan gelen tüm isteklere cevap vermeye çalışıyor
 app.use('/', router);
 
